@@ -1,3 +1,4 @@
-import consoleMessage from "./consoleMessage.txt";
+// @ts-ignore
+import consoleMessage from "./consoleMessage.txt?raw";
 
 console.log(consoleMessage);

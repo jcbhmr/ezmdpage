@@ -9,4 +9,6 @@
     "esModuleInterop": true,
     "moduleResolution": "bundler"
   },
+  "include": ["vite.config.ts", "src", "test"],
+  "exclude": ["node_modules"]
 }

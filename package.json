@@ -1,22 +1,22 @@
 {
-  "type": "module",
   "name": "@jcbhmr/md-html",
+  "version": "1.0.0",
   "description": "📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere",
-  "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "license": "BSD-2-Clause",
+  "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
+  "type": "module",
   "exports": "./dist/index.js",
   "scripts": {
-    "test": "echo 'No tests yet!'",
     "prepack": "vite build",
-    "pretest": "prettier -w --ignore-file .gitignore ."
+    "pretest": "prettier -w --ignore-file .gitignore .",
+    "test": "tsc --noEmit"
   },
   "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-jsdoc": "latest",
+    "prettier-plugin-packagejson": "latest",
     "typescript": "latest",
     "vite": "latest",
-    "vitest": "latest",
-    "prettier": "latest",
-    "prettier-plugin-packagejson": "latest",
-    "prettier-plugin-jsdoc": "latest",
-    "vite-plugin-plain-text": "latest"
+    "vitest": "latest"
   }
 }
