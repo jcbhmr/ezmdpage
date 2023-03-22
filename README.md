@@ -1,12 +1,108 @@
-# Markdeep
-Official public mirror of Markdeep by Morgan McGuire. BSD License.
+![🚧 Under construction 👷‍♂️](https://i.imgur.com/LEP2R3N.png)
 
-See the [Markdeep homepage](https://casual-effects.com/markdeep) for documentation and a hosted
-version.
+# Markdown in HTML
 
-If you wish to support Markdeep development, please [sponsor my open source projects](https://github.com/sponsors/morgan3d).
-That funds my open source projects by defraying licensing, subcontracting,
-and hosting costs.
+📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere \
+🔀 Forked from [morgan3d/markdeep]
 
-I do not accept pull requests through this repository because this is a
-mirror of the private repo. Email <morgan@casual-effects.com> to discuss features.
+<div align="center">
+
+![](https://placekitten.com/600/400)
+
+</div>
+
+📂 Renders `file:///document.html` pages \
+🏝️ Works offline (when inlined) \
+📜 Failsafe text fallback when `<script>` is unavailable
+
+👀 You might also be looking for a Markdown custom element like
+[@polymer/marked-element].
+
+## Installation
+
+⚠️ This project is intended to be sourced directly from a `<script src="...">`
+script tag with no other content on the page.
+
+Just add this code to the very top of your page:
+
+<!-- prettier-ignore -->
+```html
+<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+```
+
+🎨 Make sure you set your autoformatter like Prettier to associate `.md.html`
+files with Markdown! They should still work like normal; the
+`<script><plaintext>` prefix won't affect anything.
+
+🏝️ If you want to install this for use offline, the recommended way is to
+download [the latest `jcbhmr-md-html.min.js` file] and do something like this:
+
+```
+file:///home/you/Documents/try-md-html/
+├── jcbhmr-md-html.min.js
+└── Your_super_cool_document.md.html
+```
+
+<!-- prettier-ignore -->
+```html
+<script src="jcbhmr-md-html.min.js"></script><plaintext>
+```
+
+⚙️ If you really want it to all be in one file you _can_ inline the JavaScript
+code using something like [remy/inliner]. Be warned that this could make it more
+difficult to edit the actual Markdown part of the document. If you do this, it's
+recommended to **turn off "Word wrap"** so that you can let the top few lines of
+JavaScript mostly be offscreen without wrapping and taking up too much space.
+
+## Usage
+
+After adding the `<script>` and `<plaintext>` tags to your `.md.html` file, you
+can get started editing your document in ernest! You can use any relgular old
+text editor to compose your markdown; even Windows Notepad works great,
+especially when you split your screen into two windows: half Chrome and half
+Notepad! It even works with local `file:` URLs, so you can just email or share a
+plain `.html` file with someone, and they will be able to open and view it.
+
+```md
+<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+
+# Hello world!
+
+This is my **Markdown document**! There's some <mark>HTML</mark> elements in
+here <u>too</u> since Markdown supports _inline HTML_.
+```
+
+✨ You can use all the features of GitHub Flavored Markdown!
+
+```md
+<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+
+| This is a test |
+| -------------- |
+| I'm a table!   |
+```
+
+➕ If you want a more full-featured Markdown editing toolkit, checkout
+[StackEdit] or [Dillinger.io]. ❤️
+
+### Exporting your rendered document
+
+When you view a `.md.html` file in your browser, you can open up the DevTools
+console in Chrome or Firefox using <kbd>F12</kbd> to be greeted by some lovely
+instructions on how to export your rendered document if you choose.
+
+<details>
+  <summary>Exerpt from the DevTools console</summary>
+
+TODO: Add excerpt here
+
+</details>
+
+<!-- prettier-ignore-start -->
+[@polymer/marked-element]: https://www.webcomponents.org/element/@polymer/marked-element
+[morgan3d/markdeep]: https://github.com/morgan3d/markdeep#readme
+[remy/inliner]: https://github.com/remy/inliner#readme
+[stackedit]: https://stackedit.io/
+[dillinger.io]: https://dillinger.io/
+[the latest `jcbhmr-md-html.min.js` file]: https://github.com/jcbhmr/md-html/releases/latest
+<!-- prettier-ignore-end -->
