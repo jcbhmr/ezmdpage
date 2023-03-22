@@ -2,7 +2,7 @@
   "name": "@jcbhmr/md-html",
   "version": "1.0.0",
   "description": "📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
   "exports": "./dist/index.js",
