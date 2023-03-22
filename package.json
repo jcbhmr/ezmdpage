@@ -18,5 +18,10 @@
     "typescript": "latest",
     "vite": "latest",
     "vitest": "latest"
+  },
+  "dependencies": {
+    "@types/marked": "^4.0.8",
+    "marked": "^4.3.0",
+    "p-event": "^5.0.1"
   }
 }
