@@ -1,3 +1,1 @@
-Hello world!
-
-This is a test console message.
+<b="color: pink">Hello</b> <b="color: cyan">World</b>!

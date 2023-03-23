@@ -1,38 +1,50 @@
-// @ts-ignore
-import consoleMessage from "./consoleMessage.txt?raw";
 import { pEvent } from "p-event";
 import { marked } from "marked";
+import "./index.scss";
+import "console.style";
+// @ts-ignore
+import consoleMessage from "./consoleMessage.txt?raw";
 
-const script = document.currentScript;
+declare var consoleMessage: string;
+
+declare global {
+  interface Console {
+    style(xmlLike: string): void;
+  }
+}
+
+const script = document.currentScript!;
 
 async function main(): Promise<any> {
-  document.body.hidden = true;
+  document.documentElement.hidden = true;
+  try {
+    if (document.readyState === "loading") {
+      await pEvent(document, "DOMContentLoaded");
+    }
 
-  await pEvent(document, "DOMContentLoaded");
+    const plaintext = document.querySelector("plaintext");
+    if (!plaintext) {
+      throw new Error("No <plaintext> element found.");
+    }
 
-  const plaintext = document.querySelector("plaintext");
-  if (!plaintext) {
-    document.body.hidden = false;
-    console.error();
-    return;
+    const html = marked(plaintext.textContent!);
+    const fragment = document.createRange().createContextualFragment(html);
+
+    document.body.classList.add("markdown-body");
+    plaintext.replaceWith(fragment);
+    script.remove();
+
+    const headHTML = `
+      <meta charset="UTF-8" />
+      <title>${document.querySelector("h1")?.textContent ?? "Document"}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    `;
+    document.head.insertAdjacentHTML("afterbegin", headHTML);
+
+    console.style(consoleMessage);
+  } finally {
+    document.documentElement.hidden = false;
   }
-
-  script.remove();
-  plaintext.remove();
-
-  const md = plaintext.textContent;
-  const html = marked(md);
-
-  document.body.innerHTML = html;
-  document.body.hidden = false;
-
-  document.title = document.querySelector("h1")?.innerText ?? "";
-
-  document.head.insertAdjacentHTML("afterbegin", "<meta charset='UTF-8' />");
-  document.head.insertAdjacentHTML(
-    "beforeend",
-    "<meta name='viewport' content='width=device-width, initial-scale=1' />"
-  );
 }
 
 main();

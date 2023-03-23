@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import cssInjectedByJS from "vite-plugin-css-injected-by-js";
 
 const config = defineConfig({
   build: {
@@ -9,6 +10,7 @@ const config = defineConfig({
       fileName: "index",
     },
   },
+  plugins: [cssInjectedByJS()],
 });
 
 export default config;

@@ -5,23 +5,41 @@
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
-  "exports": "./dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html",
     "prepack": "vite build",
+    "start": "conc 'serve' 'vite build -w'",
     "pretest": "prettier -w --ignore-file .gitignore .",
-    "test": "tsc --noEmit"
+    "test": "tsc --noEmit && echo 'Make sure a human tests the demo!'"
   },
-  "devDependencies": {
-    "prettier": "latest",
-    "prettier-plugin-jsdoc": "latest",
-    "prettier-plugin-packagejson": "latest",
-    "typescript": "latest",
-    "vite": "latest",
-    "vitest": "latest"
+  "prettier": {
+    "proseWrap": "always",
+    "overrides": [
+      {
+        "files": "*.md.html",
+        "options": {
+          "parser": "markdown"
+        }
+      }
+    ]
   },
   "dependencies": {
     "@types/marked": "^4.0.8",
+    "console.style": "^0.2.2",
+    "github-markdown-css": "^5.2.0",
     "marked": "^4.3.0",
     "p-event": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "prettier": "latest",
+    "prettier-plugin-jsdoc": "latest",
+    "prettier-plugin-packagejson": "latest",
+    "sass": "^1.59.3",
+    "serve": "^14.2.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-plugin-css-injected-by-js": "^3.1.0"
   }
 }
