@@ -1,5 +1,3 @@
-![🚧 Under construction 👷‍♂️](https://i.imgur.com/LEP2R3N.png)
-
 # Markdown in HTML
 
 📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere \
