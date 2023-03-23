@@ -1,6 +1,6 @@
 {
   "name": "@jcbhmr/md-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere",
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
