@@ -22,12 +22,6 @@ jobs:
         with:
           cache: npm
       - run: npm ci
-      - uses: actions/configure-pages@v3
-      - run: npm run docs:prepack
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: docs/dist
-      - uses: actions/deploy-pages@v2
       - run: npm publish --access public --foreground-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -36,3 +30,9 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: jcbhmr-md-html.min.js
+      - uses: actions/configure-pages@v3
+      - run: npm run docs:prepack
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/dist
+      - uses: actions/deploy-pages@v2
