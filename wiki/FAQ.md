@@ -21,3 +21,11 @@ library bundles. At least, not yet.
 
 If you're interested in contributing such a feature, that's awesome! We'd love
 to incorporate it! ❤️
+
+## Why use `main` instead of `exports` in `package.json`?
+
+Because [unpkg.com doesn't support `exports`]. 🤷‍♂️ I want to maintain
+compatibility with the most well-known npm CDN because this package is largely
+intended for use in the browser with a CDN. If this were a generic library, I
+wouldn't worry, but here it matters enough to use the old `main` instead of the
+new `exports`.

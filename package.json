@@ -6,6 +6,9 @@
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html",
     "prepack": "vite build",
