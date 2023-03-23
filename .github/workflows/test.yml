@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [main]
     paths: ["*.json", "*.ts", "src/**", "test/**", .github/workflows/test.yml]
-  workflow_dispatch:
 concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: true
