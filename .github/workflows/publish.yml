@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy-pages.outputs.pages_url }}
+      url: ${{ steps.deploy-pages.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -55,3 +55,4 @@ jobs:
         with:
           path: docs/dist
       - uses: actions/deploy-pages@v2
+        id: deploy-pages
