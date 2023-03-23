@@ -25,6 +25,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
+      - run: npm ci
       - run: npm pack --dry-run --foreground-scripts
       - uses: shogo82148/actions-upload-release-asset@v1
         with:
@@ -41,6 +42,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
+      - run: npm ci
       - uses: actions/configure-pages@v3
       - run: npm run docs:prepack
       - uses: actions/upload-pages-artifact@v1
