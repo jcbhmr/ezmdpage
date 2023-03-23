@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html",
+    "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html && vite build && cp dist/index.iife.js docs/dist/index.iife.js && sed -i 's|../dist/||' docs/dist/index.html",
     "prepack": "vite build",
     "start": "conc 'serve' 'vite build -w'",
     "pretest": "prettier -w --ignore-path .gitignore .",
