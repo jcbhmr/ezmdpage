@@ -1,4 +1,4 @@
-name: Publish docs
+name: Publish
 on:
   release:
     types: [released]
@@ -7,10 +7,10 @@ permissions:
   pages: write
   id-token: write
 concurency:
-  group: publish-docs
+  group: publish
   cancel-in-progress: true
 jobs:
-  publish-docs:
+  publish:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -21,9 +21,12 @@ jobs:
         with:
           cache: npm
       - run: npm ci
-      - run: npm pack --dry-run --foreground-scripts
       - uses: actions/configure-pages@v3
+      - run: npm run docs:prepack
       - uses: actions/upload-pages-artifact@v1
         with:
           path: docs/dist
       - uses: actions/deploy-pages@v2
+      - run: npm publish --access public --foreground-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
