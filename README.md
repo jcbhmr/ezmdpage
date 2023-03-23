@@ -1,6 +1,6 @@
 # `.md.html`
 
-📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere \
+📝 Write raw Markdown in `.md.html` files that gets auto-rendered everywhere \
 🔀 Forked from [morgan3d/markdeep]
 
 <div align="center">
