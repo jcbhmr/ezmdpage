@@ -13,7 +13,7 @@
     "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html",
     "prepack": "vite build",
     "start": "conc 'serve' 'vite build -w'",
-    "pretest": "prettier -w --ignore-file .gitignore .",
+    "pretest": "prettier -w --ignore-path .gitignore .",
     "test": "tsc --noEmit && echo 'Make sure a human tests the demo!'"
   },
   "prettier": {

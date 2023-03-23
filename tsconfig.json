@@ -7,7 +7,8 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "skipLibCheck": true
   },
   "include": ["vite.config.ts", "src", "test"],
   "exclude": ["node_modules"]
