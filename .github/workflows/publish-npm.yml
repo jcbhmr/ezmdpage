@@ -1,0 +1,19 @@
+name: Publish npm
+on:
+  release:
+    types: [released]
+concurrency:
+  group: publish-npm
+  cancel-in-progress: true
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+      - run: npm ci
+      - run: npm publish --access public --foreground-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

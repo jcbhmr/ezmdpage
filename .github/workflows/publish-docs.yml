@@ -1,0 +1,29 @@
+name: Publish docs
+on:
+  release:
+    types: [released]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurency:
+  group: publish-docs
+  cancel-in-progress: true
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.pages_url }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+      - run: npm ci
+      - run: npm pack --dry-run --foreground-scripts
+      - uses: actions/configure-pages@v3
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/dist
+      - uses: actions/deploy-pages@v2
