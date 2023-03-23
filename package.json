@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.iife.js",
   "files": [
     "dist"
   ],
