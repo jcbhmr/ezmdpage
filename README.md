@@ -1,11 +1,11 @@
 # `.md.html`
 
 📝 Write raw Markdown in `.md.html` files that gets auto-rendered everywhere \
-🔀 Forked from [morgan3d/markdeep]
+💡 Inspired by [morgan3d/markdeep]
 
 <div align="center">
 
-![](https://placekitten.com/600/400)
+![](https://i.imgur.com/KUn9WK7.png)
 
 </div>
 
