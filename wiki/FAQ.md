@@ -29,3 +29,7 @@ compatibility with the most well-known npm CDN because this package is largely
 intended for use in the browser with a CDN. If this were a generic library, I
 wouldn't worry, but here it matters enough to use the old `main` instead of the
 new `exports`.
+
+<!-- prettier-ignore-start -->
+[unpkg.com doesn't support `exports`]: https://github.com/mjackson/unpkg/issues/265
+<!-- prettier-ignore-end -->
