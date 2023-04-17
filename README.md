@@ -1,7 +1,7 @@
 # `.md.html`
 
 📝 Write raw Markdown in `.md.html` files that gets auto-rendered everywhere \
-💡 Inspired by [morgan3d/markdeep]
+💡 Inspired by [markdeep]
 
 <div align="center">
 
@@ -113,7 +113,7 @@ assistance! ❤️
 
 <!-- prettier-ignore-start -->
 [@polymer/marked-element]: https://www.webcomponents.org/element/@polymer/marked-element
-[morgan3d/markdeep]: https://github.com/morgan3d/markdeep#readme
+[markdeep]: https://casual-effects.com/markdeep/
 [remy/inliner]: https://github.com/remy/inliner#readme
 [stackedit]: https://stackedit.io/
 [dillinger.io]: https://dillinger.io/
