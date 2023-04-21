@@ -2,10 +2,20 @@ name: Test
 on:
   push:
     branches: [main]
-    paths: ["*.json", "*.ts", "src/**", "test/**", .github/workflows/test.yml]
+    paths:
+      - "*.json"
+      - "*.ts"
+      - "src/**"
+      - "test/**"
+      - .github/workflows/test.yml
   pull_request:
     branches: [main]
-    paths: ["*.json", "*.ts", "src/**", "test/**", .github/workflows/test.yml]
+    paths:
+      - "*.json"
+      - "*.ts"
+      - "src/**"
+      - "test/**"
+      - .github/workflows/test.yml
 concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: true
