@@ -15,7 +15,7 @@ jobs:
           cache: npm
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish --access public --foreground-scripts
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   add-assets:
@@ -27,7 +27,7 @@ jobs:
         with:
           cache: npm
       - run: npm ci
-      - run: npm pack --dry-run --foreground-scripts
+      - run: npm pack
       - uses: shogo82148/actions-upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
