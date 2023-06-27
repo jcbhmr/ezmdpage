@@ -1,9 +1,9 @@
 import { marked } from "marked";
 import "./index.css";
 
-const script = document.currentScript!;
+const script = document.currentScript;
 
-async function main(): Promise<any> {
+async function main() {
   document.documentElement.hidden = true;
   try {
     if (document.readyState === "loading") {
@@ -17,7 +17,7 @@ async function main(): Promise<any> {
       throw new DOMException("No <plaintext> element found", "NotFoundError");
     }
 
-    const html = marked(plaintext.textContent!);
+    const html = marked(plaintext.textContent);
     const fragment = document.createRange().createContextualFragment(html);
 
     plaintext.replaceWith(fragment);
