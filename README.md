@@ -23,8 +23,9 @@
 ![unpkg.com](https://img.shields.io/static/v1?style=for-the-badge&message=unpkg.com&color=EFEFEF&logo=Udemy&logoColor=8B4513&label=)
 ![jsDelivr](https://img.shields.io/static/v1?style=for-the-badge&message=jsDelivr&color=E84D3D&logo=jsDelivr&logoColor=FFFFFF&label=)
 
-You can download the `ezmd.min.js` file locally (it works offline!) or use an
-npm CDN like [unpkg.com] or [jsDelivr] to load it from the web:
+You can <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd> [the `ezmd.min.js` file] to
+download it and load it locally (for offline use) or use an npm CDN like
+[unpkg.com] or [jsDelivr] to load it from the web:
 
 <!-- prettier-ignore -->
 ```html
@@ -86,7 +87,7 @@ local `file:` URLs: you can just email or share a plain `.html` file with
 someone, and they will be able to open and view it.
 
 ````md
-<script src="https://unpkg.com/@togajam/ezmd"></script><plaintext>
+<script src="https://unpkg.com/@togajam/ezmd@1"></script><plaintext>
 
 # Hello world!
 
@@ -139,4 +140,5 @@ packages, so it makes sense to bend over backwards to support it.
 [vite-plugin-css-injected-by-js]: https://github.com/marco-prontera/vite-plugin-css-injected-by-js#readme
 [alpine.js with ezmd]: https://togajam.github.io/ezmd/alpinejs.html
 [the github pages site]: https://togajam.github.io/ezmd/
+[the `ezmd.min.js` file]: https://togajam.github.io/ezmd/ezmd.min.js
 <!-- prettier-ignore-end -->
