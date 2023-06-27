@@ -18,7 +18,7 @@ function myPlugin() {
 export default defineConfig({
   build: {
     lib: {
-      entry: "src/index.ts",
+      entry: "src/index.js",
       formats: ["iife"],
       name: "ezmd",
       fileName: () => "index.min.js",

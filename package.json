@@ -1,6 +1,6 @@
 {
   "name": "@togajam/ezmd",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "📝 Write raw Markdown in .html files that gets auto-rendered everywhere",
   "keywords": [
     "html",
