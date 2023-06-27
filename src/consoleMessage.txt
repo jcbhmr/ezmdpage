@@ -1,1 +1,0 @@
-<b="color: pink">Hello</b> <b="color: cyan">World</b>!

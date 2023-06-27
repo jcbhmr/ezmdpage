@@ -1,26 +1,24 @@
 {
-  "name": "@jcbhmr/md-html",
-  "version": "1.0.1",
-  "description": "📝 Write raw Markdown in .md.html files that gets auto-rendered everywhere",
+  "name": "@togajam/ezmd",
+  "version": "1.1.0",
+  "description": "📝 Write raw Markdown in .html files that gets auto-rendered everywhere",
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
-  "main": "dist/index.iife.js",
+  "main": "dist/index.min.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "docs:prepack": "mkdir -p docs/dist && cp test/index.demo.md.html docs/dist/index.html && vite build && cp dist/index.iife.js docs/dist/index.iife.js && sed -i 's|../dist/||' docs/dist/index.html",
-    "prepack": "vite build",
-    "start": "conc 'serve' 'vite build -w'",
-    "pretest": "prettier -w --ignore-path .gitignore .",
-    "test": "tsc --noEmit && echo 'Make sure a human tests the demo!'"
+    "build": "vite build",
+    "lint": "prettier -w --ignore-path .gitignore . && tsc --noEmit",
+    "test": "conc \"vite build -w\" \"serve test\""
   },
   "prettier": {
     "proseWrap": "always",
     "overrides": [
       {
-        "files": "*.md.html",
+        "files": "*.html",
         "options": {
           "parser": "markdown"
         }
@@ -28,21 +26,17 @@
     ]
   },
   "dependencies": {
-    "@types/marked": "^4.0.8",
-    "console.style": "^0.2.2",
     "github-markdown-css": "^5.2.0",
-    "marked": "^4.3.0",
-    "p-event": "^5.0.1"
+    "marked": "^4.3.0"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "prettier": "latest",
-    "prettier-plugin-jsdoc": "latest",
-    "prettier-plugin-packagejson": "latest",
-    "sass": "^1.59.3",
+    "@types/marked": "^5.0.0",
+    "concurrently": "^8.2.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-packagejson": "^2.4.3",
     "serve": "^14.2.0",
-    "typescript": "latest",
-    "vite": "latest",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
     "vite-plugin-css-injected-by-js": "^3.1.0"
   }
 }

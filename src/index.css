@@ -13,3 +13,7 @@ html {
     background-color: #0d1117;
   }
 }
+
+pre code.hljs {
+  padding: 0 !important;
+}

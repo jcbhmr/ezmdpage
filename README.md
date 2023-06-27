@@ -1,123 +1,142 @@
-# `.md.html`
+# Easy self-rendering Markdown documents
 
-📝 Write raw Markdown in `.md.html` files that gets auto-rendered everywhere \
+📝 Write raw Markdown in `.html` files that gets auto-rendered everywhere \
 💡 Inspired by [markdeep]
 
 <div align="center">
 
-![](https://i.imgur.com/KUn9WK7.png)
+![](https://user-images.githubusercontent.com/61068799/249243528-2c41c147-ec38-4d0f-9dc4-7696c1ac3834.png)
+
+<!-- prettier-ignore -->
+[Test page](https://togajam.github.io/ezmd/)
+| [ezmd & Alpine.js](https://togajam.github.io/ezmd/alpinejs.html)
+| [ezmd & Vue.js](https://togajam.github.io/ezmd/vuejs.html)
 
 </div>
 
-📂 Renders `file:///document.html` pages \
-🏝️ Works offline (when inlined) \
-📜 Failsafe text fallback when `<script>` is unavailable
-
-👀 You might also be looking for a Markdown custom element like
-[@polymer/marked-element].
+📂 Works with `file:///document.html` documents \
+📜 Failsafe text fallback when JavaScript is disabled \
+🏝️ Works offline!
 
 ## Installation
 
+![unpkg.com](https://img.shields.io/static/v1?style=for-the-badge&message=unpkg.com&color=EFEFEF&logo=Udemy&logoColor=8B4513&label=)
 ![jsDelivr](https://img.shields.io/static/v1?style=for-the-badge&message=jsDelivr&color=E84D3D&logo=jsDelivr&logoColor=FFFFFF&label=)
 
-⚠️ This project is intended to be sourced directly from a `<script src="...">`
-script tag with no other content on the page.
-
-Just add this code to the very top of your page:
+You can download the `ezmd.min.js` file locally (it works offline!) or use an
+npm CDN like [unpkg.com] or [jsDelivr] to load it from the web:
 
 <!-- prettier-ignore -->
 ```html
-<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+<script src="ezmd.min.js"></script><plaintext>
+<script src="https://unpkg.com/@togajam/ezmd@1"></script><plaintext>
+<script src="https://cdn.jsdelivr.net/npm/@togajam/ezmd@1"></script><plaintext>
 ```
 
-🎨 Make sure you set your autoformatter like Prettier to associate `.md.html`
-files with Markdown! They should still work like normal; the
-`<script><plaintext>` prefix won't affect anything.
+<details><summary>💡 You may also configure your formatter & editor</summary>
 
-🏝️ If you want to install this for use offline, the recommended way is to
-download [the latest `jcbhmr-md-html.min.js` file] and do something like this:
+To get the best editing experience, you can configure Prettier or your other
+favorite formatter to use its Markdown parser/beautifier on `.html` files.
 
+```jsonc
+// package.json
+{
+  "prettier": {
+    "overrides": [
+      {
+        "files": ["*.html"],
+        "options": {
+          "parser": "markdown"
+        }
+      }
+    ]
+  }
+}
 ```
-file:///home/you/Documents/try-md-html/
-├── jcbhmr-md-html.min.js
-└── Your_super_cool_document.md.html
+
+💡 You can also use a custom suffix like `.ezmd.html` or something if you have
+other non-ezmd HTML content in your workspace too.
+
+⚛️ To get proper syntax highlighting in VS Code, you'll need to configure it to
+use its Markdown mode for `.html` files. You can do this by adding this to your
+`.vscode/settings.json` file:
+
+```jsonc
+{
+  "files.associations": {
+    "*.html": "markdown"
+  }
+}
 ```
 
-<!-- prettier-ignore -->
-```html
-<script src="jcbhmr-md-html.min.js"></script><plaintext>
-```
+</details>
 
-⚙️ If you really want it to all be in one file you _can_ inline the JavaScript
-code using something like [remy/inliner]. Be warned that this could make it more
-difficult to edit the actual Markdown part of the document. If you do this, it's
-recommended to **turn off "Word wrap"** so that you can let the top few lines of
-JavaScript mostly be offscreen without wrapping and taking up too much space.
+⚠️ This project is intended to be used on a plain HTML page. It may not work
+with other non-Markdown content on the page.
 
 ## Usage
 
+![Markdown](https://img.shields.io/static/v1?style=for-the-badge&message=Markdown&color=000000&logo=Markdown&logoColor=FFFFFF&label=)
 ![Browser](https://img.shields.io/static/v1?style=for-the-badge&message=Browser&color=4285F4&logo=Google+Chrome&logoColor=FFFFFF&label=)
 
-After adding the `<script>` and `<plaintext>` tags to your `.md.html` file, you
-can get started editing your document in ernest! You can use any relgular old
-text editor to compose your markdown; even Windows Notepad works great,
-especially when you split your screen into two windows: half Chrome and half
-Notepad! It even works with local `file:` URLs, so you can just email or share a
-plain `.html` file with someone, and they will be able to open and view it.
+After adding the magic `<script>` to your `.md.html` file, you can get started
+editing your document in ernest! You can use any relgular old text editor to
+compose your markdown; even Windows Notepad works great! ezmd even works with
+local `file:` URLs: you can just email or share a plain `.html` file with
+someone, and they will be able to open and view it.
 
-```md
-<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+````md
+<script src="https://unpkg.com/@togajam/ezmd"></script><plaintext>
 
 # Hello world!
 
 This is my **Markdown document**! There's some <mark>HTML</mark> elements in
 here <u>too</u> since Markdown supports _inline HTML_.
+
+| Look at this cool 😎 GFM table! | Wow!                |
+| ------------------------------- | ------------------- |
+| We can even do math!            | $ax^2 + bx + c = 0$ |
+
+```js
+console.log("Code highlighting works too!");
 ```
 
-✨ You can use all the features of GitHub Flavored Markdown!
+> All other Markdown features work as expected.
 
-```md
-<script src="https://unpkg.com/@jcbhmr/md-html"></script><plaintext>
+<script>
+  // You can even use <script> tags! There's NO SAFETY FILTER for HTML elements.
+  const html = `<p>It's ${new Date().toLocaleTimeString()}!</p>`;
+  document.body.append(document.createRange().createContextualFragment(html));
+</script>
+````
 
-| This is a test |
-| -------------- |
-| I'm a table!   |
-```
-
-➕ If you want a more full-featured Markdown editing toolkit, checkout
-[StackEdit] or [Dillinger.io]. ❤️
-
-### Exporting your rendered document
-
-When you view a `.md.html` file in your browser, you can open up the DevTools
-console in Chrome or Firefox using <kbd>F12</kbd> to be greeted by some lovely
-instructions on how to export your rendered document if you choose.
-
-<details>
-  <summary>Exerpt from the DevTools console</summary>
-
-TODO: Add excerpt here
-
-</details>
+🤩 For more cool examples like using [Alpine.js with ezmd], check out [the
+GitHub Pages site] which hosts the `test/` folder demos!
 
 ## Development
 
 ![TypeScript](https://img.shields.io/static/v1?style=for-the-badge&message=TypeScript&color=3178C6&logo=TypeScript&logoColor=FFFFFF&label=)
 ![Vite](https://img.shields.io/static/v1?style=for-the-badge&message=Vite&color=646CFF&logo=Vite&logoColor=FFFFFF&label=)
 
-This project is a relatively simplistic wrapper around [Marked], a GitHub
-Flavored Markdown renderer. We compile it to a UMD `.min.js` file for use in a
-classic `<script>` tag. 🔮 In the future, we want to use [Storybook] to make the
-demos more interactive! If you have Storybook knowhow, we'd love your
-assistance! ❤️
+This project uses [Vite] to create a IIFE bundle of all the CSS and JavaScript
+that gets injected into the page. It's basically just [Marked] & [HighlightJS].
+We use [vite-plugin-css-injected-by-js] to inline the CSS into the JavaScript
+bundle.
+
+ℹ Note that we use the `main` field in `package.json` and not the new `exports`
+field. This is because [unpkg.com] doesn't support the new `exports` field. See
+[mjackson/unpkg#265]. unpkg.com is the most popular CDN for non-ESM npm
+packages, so it makes sense to bend over backwards to support it.
 
 <!-- prettier-ignore-start -->
-[@polymer/marked-element]: https://www.webcomponents.org/element/@polymer/marked-element
 [markdeep]: https://casual-effects.com/markdeep/
-[remy/inliner]: https://github.com/remy/inliner#readme
-[stackedit]: https://stackedit.io/
-[dillinger.io]: https://dillinger.io/
-[the latest `jcbhmr-md-html.min.js` file]: https://github.com/jcbhmr/md-html/releases/latest
 [marked]: https://marked.js.org/
-[storybook]: https://storybook.js.org/
+[highlightjs]: https://highlightjs.org/
+[mjackson/unpkg#265]: https://github.com/mjackson/unpkg/issues/265
+[vite]: https://vitejs.dev/
+[unpkg.com]: https://unpkg.com/
+[jsdelivr]: https://www.jsdelivr.com/
+[vite-plugin-css-injected-by-js]: https://github.com/marco-prontera/vite-plugin-css-injected-by-js#readme
+[alpine.js with ezmd]: https://togajam.github.io/ezmd/alpinejs.html
+[the github pages site]: https://togajam.github.io/ezmd/
 <!-- prettier-ignore-end -->

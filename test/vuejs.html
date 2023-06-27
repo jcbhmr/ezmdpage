@@ -1,0 +1,55 @@
+<script src="https://unpkg.com/vue@3"></script>
+<script src="ezmd.min.js"></script><plaintext>
+
+<div align="center">
+
+<!-- prettier-ignore -->
+[Test page](.)
+| [ezmd & Alpine.js](alpinejs.html)
+| [ezmd & Vue.js](vuejs.html)
+| [GitHub](https://github.com/togajam/ezmd)
+
+Try right-click and <kbd>View page source</kbd>!
+
+</div>
+
+# ezmd & Alpine.js
+
+https://vuejs.org/
+
+<!-- prettier-ignore -->
+```html
+<script src="https://unpkg.com/vue@3"></script>
+<script src="ezmd.min.js"></script><plaintext>
+```
+
+There should be a "Hello vue!" `<div>` below. It's rendered by Vue.js. Here's
+the code:
+
+```html
+<div id="app">{{ message }}</div>
+
+<script>
+  const { createApp, ref } = Vue;
+  createApp({
+    setup() {
+      const message = ref("Hello vue!");
+      return { message };
+    },
+  }).mount("#app");
+</script>
+```
+
+<div id="app">{{ message }}</div>
+
+<script>
+  const { createApp, ref } = Vue;
+  createApp({
+    setup() {
+      const message = ref("Hello vue!");
+      return { message };
+    }
+  }).mount("#app");
+</script>
+
+👆 That's from Vue.js!

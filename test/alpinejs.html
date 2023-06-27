@@ -1,0 +1,65 @@
+<script src="https://unpkg.com/alpinejs@3"></script>
+<script src="ezmd.min.js"></script><plaintext>
+
+<div align="center">
+
+<!-- prettier-ignore -->
+[Test page](.)
+| [ezmd & Alpine.js](alpinejs.html)
+| [ezmd & Vue.js](vuejs.html)
+| [GitHub](https://github.com/togajam/ezmd)
+
+Try right-click and <kbd>View page source</kbd>!
+
+</div>
+
+# ezmd & Alpine.js
+
+https://alpinejs.dev/
+
+<!-- prettier-ignore -->
+```html
+<script src="https://unpkg.com/alpinejs@3"></script>
+<script src="ezmd.min.js"></script><plaintext>
+```
+
+There should be a paragraph below that has "I ❤️ Alpine" in it. It's rendered by
+Alpine.js. Here's the code:
+
+```html
+<p x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></p>
+```
+
+<p x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></p>
+
+👆 That's Alpine.js! This is just _plain Markdown_. You can mix the two!
+
+Here's some more Alpine.js things:
+
+## Incrementing counter
+
+https://alpinejs.dev/start-here#building-a-counter
+
+<div x-data="{ count: 0 }">
+  <button x-on:click="count++">Increment</button>
+  <span x-text="count"></span>
+</div>
+
+## Search input
+
+https://alpinejs.dev/start-here#building-a-search-input
+
+<div x-data="{
+  search: '',
+  items: ['foo', 'bar', 'baz'],
+  get filteredItems() {
+    return this.items.filter(i => i.startsWith(this.search))
+  }
+}">
+  <input x-model="search" placeholder="Search...">
+  <ul>
+    <template x-for="item in filteredItems" :key="item">
+      <li x-text="item"></li>
+    </template>
+  </ul>
+</div>
