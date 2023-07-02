@@ -5,7 +5,7 @@
 
 <div align="center">
 
-![](https://user-images.githubusercontent.com/61068799/249243528-2c41c147-ec38-4d0f-9dc4-7696c1ac3834.png)
+![](https://github.com/togajam/ezmdpage/assets/61068799/6272eb94-1b39-4e5b-9bea-9257b2e2c4b9)
 
 <!-- prettier-ignore -->
 [Test page](https://togajam.github.io/ezmdpage/)
