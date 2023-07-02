@@ -1,4 +1,4 @@
-# Easy self-rendering Markdown documents
+# Easy self-rendering Markdown pages
 
 📝 Write raw Markdown in `.html` files that gets auto-rendered everywhere \
 💡 Inspired by [markdeep]
@@ -8,9 +8,9 @@
 ![](https://user-images.githubusercontent.com/61068799/249243528-2c41c147-ec38-4d0f-9dc4-7696c1ac3834.png)
 
 <!-- prettier-ignore -->
-[Test page](https://togajam.github.io/ezmd/)
-| [ezmd & Alpine.js](https://togajam.github.io/ezmd/alpinejs.html)
-| [ezmd & Vue.js](https://togajam.github.io/ezmd/vuejs.html)
+[Test page](https://togajam.github.io/ezmdpage/)
+| [ezmdpage & Alpine.js](https://togajam.github.io/ezmdpage/alpinejs.html)
+| [ezmdpage & Vue.js](https://togajam.github.io/ezmdpage/vuejs.html)
 
 </div>
 
@@ -23,15 +23,15 @@
 ![unpkg.com](https://img.shields.io/static/v1?style=for-the-badge&message=unpkg.com&color=EFEFEF&logo=Udemy&logoColor=8B4513&label=)
 ![jsDelivr](https://img.shields.io/static/v1?style=for-the-badge&message=jsDelivr&color=E84D3D&logo=jsDelivr&logoColor=FFFFFF&label=)
 
-You can <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd> [the `ezmd.min.js` file] to
+You can <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd> [the `ezmdpage.min.js` file] to
 download it and load it locally (for offline use) or use an npm CDN like
 [unpkg.com] or [jsDelivr] to load it from the web:
 
 <!-- prettier-ignore -->
 ```html
-<script src="ezmd.min.js"></script><plaintext>
-<script src="https://unpkg.com/@togajam/ezmd@1"></script><plaintext>
-<script src="https://cdn.jsdelivr.net/npm/@togajam/ezmd@1"></script><plaintext>
+<script src="ezmdpage.min.js"></script><plaintext>
+<script src="https://unpkg.com/ezmdpage@1"></script><plaintext>
+<script src="https://cdn.jsdelivr.net/npm/ezmdpage@1"></script><plaintext>
 ```
 
 <details><summary>💡 You may also configure your formatter & editor</summary>
@@ -55,8 +55,8 @@ favorite formatter to use its Markdown parser/beautifier on `.html` files.
 }
 ```
 
-💡 You can also use a custom suffix like `.ezmd.html` or something if you have
-other non-ezmd HTML content in your workspace too.
+💡 You can also use a custom suffix like `.ezmdpage.html` or something if you
+have other non-ezmdpage HTML content in your workspace too.
 
 ⚛️ To get proper syntax highlighting in VS Code, you'll need to configure it to
 use its Markdown mode for `.html` files. You can do this by adding this to your
@@ -82,12 +82,12 @@ with other non-Markdown content on the page.
 
 After adding the magic `<script>` to your `.md.html` file, you can get started
 editing your document in ernest! You can use any relgular old text editor to
-compose your markdown; even Windows Notepad works great! ezmd even works with
-local `file:` URLs: you can just email or share a plain `.html` file with
+compose your markdown; even Windows Notepad works great! ezmdpage even works
+with local `file:` URLs: you can just email or share a plain `.html` file with
 someone, and they will be able to open and view it.
 
 ````md
-<script src="https://unpkg.com/@togajam/ezmd@1"></script><plaintext>
+<script src="https://unpkg.com/ezmdpage@1"></script><plaintext>
 
 # Hello world!
 
@@ -111,7 +111,7 @@ console.log("Code highlighting works too!");
 </script>
 ````
 
-🤩 For more cool examples like using [Alpine.js with ezmd], check out [the
+🤩 For more cool examples like using [Alpine.js with ezmdpage], check out [the
 GitHub Pages site] which hosts the `test/` folder demos!
 
 ## Development
@@ -139,7 +139,7 @@ packages, so it makes sense to bend over backwards to support it.
 [unpkg.com]: https://unpkg.com/
 [jsdelivr]: https://www.jsdelivr.com/
 [vite-plugin-css-injected-by-js]: https://github.com/marco-prontera/vite-plugin-css-injected-by-js#readme
-[alpine.js with ezmd]: https://togajam.github.io/ezmd/alpinejs.html
-[the github pages site]: https://togajam.github.io/ezmd/
-[the `ezmd.min.js` file]: https://togajam.github.io/ezmd/ezmd.min.js
+[alpine.js with ezmdpage]: https://togajam.github.io/ezmdpage/alpinejs.html
+[the github pages site]: https://togajam.github.io/ezmdpage/
+[the `ezmdpage.min.js` file]: https://togajam.github.io/ezmdpage/ezmdpage.min.js
 <!-- prettier-ignore-end -->

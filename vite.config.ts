@@ -8,8 +8,8 @@ function myPlugin() {
     name: "my-plugin",
     async closeBundle() {
       // This is easier than trying to mess with a testing server.
-      await fsPromises.copyFile("dist/index.min.js", "test/ezmd.min.js");
-      console.debug("Copied to test/ezmd.min.js");
+      await fsPromises.copyFile("dist/index.min.js", "test/ezmdpage.min.js");
+      console.debug("Copied to test/ezmdpage.min.js");
     },
   };
 }
@@ -20,7 +20,7 @@ export default defineConfig({
     lib: {
       entry: "src/index.js",
       formats: ["iife"],
-      name: "ezmd",
+      name: "ezmdpage",
       fileName: () => "index.min.js",
     },
   },

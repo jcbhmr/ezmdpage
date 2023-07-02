@@ -1,6 +1,6 @@
 {
-  "name": "@togajam/ezmd",
-  "version": "1.1.1",
+  "name": "ezmdpage",
+  "version": "2.0.0",
   "description": "📝 Write raw Markdown in .html files that gets auto-rendered everywhere",
   "keywords": [
     "html",
@@ -11,9 +11,9 @@
     "offline-capable",
     "markdeep"
   ],
-  "homepage": "https://github.com/togajam/ezmd#readme",
-  "bugs": "https://github.com/togajam/ezmd/issues",
-  "repository": "github:togajam/ezmd",
+  "homepage": "https://github.com/togajam/ezmdpage#readme",
+  "bugs": "https://github.com/togajam/ezmdpage/issues",
+  "repository": "github:togajam/ezmdpage",
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
