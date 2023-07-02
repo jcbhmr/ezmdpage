@@ -1,4 +1,4 @@
-# This is easier than trying to mess with server middleware.
+# This is easier than trying to mess with a testing server.
 ezmd.min.js
 
 #region https://github.com/github/gitignore/blob/main/Node.gitignore

@@ -7,7 +7,7 @@ function myPlugin() {
   return {
     name: "my-plugin",
     async closeBundle() {
-      // This is easier than trying to mess with server middleware.
+      // This is easier than trying to mess with a testing server.
       await fsPromises.copyFile("dist/index.min.js", "test/ezmd.min.js");
       console.debug("Copied to test/ezmd.min.js");
     },
