@@ -30,8 +30,8 @@ download it and load it locally (for offline use) or use an npm CDN like
 <!-- prettier-ignore -->
 ```html
 <script src="ezmdpage.min.js"></script><plaintext>
-<script src="https://unpkg.com/ezmdpage@1"></script><plaintext>
-<script src="https://cdn.jsdelivr.net/npm/ezmdpage@1"></script><plaintext>
+<script src="https://unpkg.com/ezmdpage@2"></script><plaintext>
+<script src="https://cdn.jsdelivr.net/npm/ezmdpage@2"></script><plaintext>
 ```
 
 <details><summary>💡 You may also configure your formatter & editor</summary>
@@ -87,7 +87,7 @@ with local `file:` URLs: you can just email or share a plain `.html` file with
 someone, and they will be able to open and view it.
 
 ````md
-<script src="https://unpkg.com/ezmdpage@1"></script><plaintext>
+<script src="https://unpkg.com/ezmdpage@2"></script><plaintext>
 
 # Hello world!
 
