@@ -4,14 +4,15 @@ import "./index.css";
 const script = document.currentScript;
 
 async function main() {
+  if (document.readyState === "loading") {
+    document.write("<plaintext>");
+    await new Promise((r) =>
+      document.addEventListener("DOMContentLoaded", r, { once: true })
+    );
+  }
+
   document.documentElement.hidden = true;
   try {
-    if (document.readyState === "loading") {
-      await new Promise((r) =>
-        document.addEventListener("DOMContentLoaded", r, { once: true })
-      );
-    }
-
     const plaintext = document.querySelector("plaintext");
     if (!plaintext) {
       throw new DOMException("No <plaintext> element found", "NotFoundError");
@@ -47,5 +48,4 @@ async function main() {
     document.documentElement.hidden = false;
   }
 }
-
 main();

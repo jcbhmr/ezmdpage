@@ -1,6 +1,6 @@
 {
   "name": "ezmdpage",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "📝 Write raw Markdown in .html files that gets auto-rendered everywhere",
   "keywords": [
     "html",
@@ -15,7 +15,7 @@
   "bugs": "https://github.com/togajam/ezmdpage/issues",
   "repository": "github:togajam/ezmdpage",
   "license": "MIT",
-  "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
+  "author": "Jacob Hummer <togajam@outlook.com> (https://togajam.me/)",
   "type": "module",
   "main": "dist/index.min.js",
   "files": [

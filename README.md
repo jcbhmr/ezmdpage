@@ -114,6 +114,11 @@ console.log("Code highlighting works too!");
 🤩 For more cool examples like using [Alpine.js with ezmdpage], check out [the
 GitHub Pages site] which hosts the `test/` folder demos!
 
+⚠️ When the magic `<script>` tag is loaded, it immediately does a
+`document.write("<plaintext>")` if the document is still loading. That means if
+you want any preloaded JavaScript to run _before the Markdown is processed_, you
+need to put it in a `<script>` tag _before_ the magic ezmdpage `<script>` tag.
+
 ## Development
 
 ![JavaScript](https://img.shields.io/static/v1?style=for-the-badge&message=JavaScript&color=222222&logo=JavaScript&logoColor=F7DF1E&label=)
