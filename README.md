@@ -16,6 +16,7 @@
 
 📂 Works with `file:///document.html` documents \
 📜 Failsafe text fallback when JavaScript is disabled \
+🎨 Styled using GitHub's Markdown CSS \
 🏝️ Works offline!
 
 ## Installation
@@ -113,11 +114,6 @@ console.log("Code highlighting works too!");
 
 🤩 For more cool examples like using [Alpine.js with ezmdpage], check out [the
 GitHub Pages site] which hosts the `test/` folder demos!
-
-⚠️ When the magic `<script>` tag is loaded, it immediately does a
-`document.write("<plaintext>")` if the document is still loading. That means if
-you want any preloaded JavaScript to run _before the Markdown is processed_, you
-need to put it in a `<script>` tag _before_ the magic ezmdpage `<script>` tag.
 
 ## Development
 
