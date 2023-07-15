@@ -15,7 +15,9 @@
   "bugs": "https://github.com/togajam/ezmdpage/issues",
   "repository": "github:togajam/ezmdpage",
   "license": "MIT",
-  "author": "Jacob Hummer <togajam@outlook.com> (https://togajam.me/)",
+  "contributors": [
+    "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
+  ],
   "type": "module",
   "main": "dist/index.min.js",
   "files": [
