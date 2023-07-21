@@ -30,9 +30,9 @@ download it and load it locally (for offline use) or use an npm CDN like
 
 <!-- prettier-ignore -->
 ```html
-<script src="ezmdpage.min.js"></script><plaintext>
-<script src="https://unpkg.com/ezmdpage@2"></script><plaintext>
-<script src="https://cdn.jsdelivr.net/npm/ezmdpage@2"></script><plaintext>
+<script src="ezmdpage.min.js"></script><plaintext />
+<script src="https://unpkg.com/ezmdpage@2"></script><plaintext />
+<script src="https://cdn.jsdelivr.net/npm/ezmdpage@2"></script><plaintext />
 ```
 
 <details><summary>💡 You may also configure your formatter & editor</summary>
@@ -56,8 +56,8 @@ favorite formatter to use its Markdown parser/beautifier on `.html` files.
 }
 ```
 
-💡 You can also use a custom suffix like `.ezmdpage.html` or something if you
-have other non-ezmdpage HTML content in your workspace too.
+💡 You can also use a custom suffix like `.md.html` or something if you have
+other non-ezmdpage HTML content in your workspace too.
 
 ⚛️ To get proper syntax highlighting in VS Code, you'll need to configure it to
 use its Markdown mode for `.html` files. You can do this by adding this to your
@@ -88,7 +88,7 @@ with local `file:` URLs: you can just email or share a plain `.html` file with
 someone, and they will be able to open and view it.
 
 ````md
-<script src="https://unpkg.com/ezmdpage@2"></script><plaintext>
+<script src="https://unpkg.com/ezmdpage@2"></script><plaintext />
 
 # Hello world!
 
