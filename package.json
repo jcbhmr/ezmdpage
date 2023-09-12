@@ -11,9 +11,9 @@
     "offline-capable",
     "markdeep"
   ],
-  "homepage": "https://github.com/togajam/ezmdpage#readme",
-  "bugs": "https://github.com/togajam/ezmdpage/issues",
-  "repository": "github:togajam/ezmdpage",
+  "homepage": "https://github.com/jcbhmr/ezmdpage#readme",
+  "bugs": "https://github.com/jcbhmr/ezmdpage/issues",
+  "repository": "github:jcbhmr/ezmdpage",
   "license": "MIT",
   "contributors": [
     "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)"
@@ -26,18 +26,7 @@
   "scripts": {
     "build": "vite build",
     "lint": "prettier -w --ignore-path .gitignore .",
-    "test": "conc \"vite build -w\" \"serve test\""
-  },
-  "prettier": {
-    "proseWrap": "always",
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "markdown"
-        }
-      }
-    ]
+    "test": "vite"
   },
   "dependencies": {
     "github-markdown-css": "^5.2.0",
@@ -45,11 +34,8 @@
   },
   "devDependencies": {
     "@types/marked": "^5.0.0",
-    "concurrently": "^8.2.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-packagejson": "^2.4.3",
+    "prettier": "^3.0.0",
     "serve": "^14.2.0",
-    "vite": "^4.3.9",
-    "vite-plugin-css-injected-by-js": "^3.1.0"
+    "vite": "^4.3.9"
   }
 }
