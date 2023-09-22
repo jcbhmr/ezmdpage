@@ -40,7 +40,9 @@
     ]
   },
   "dependencies": {
+    "ghmd.css": "^0.1.0",
     "github-markdown-css": "^5.2.0",
+    "highlight.js": "^11.8.0",
     "marked": "^4.3.0"
   },
   "devDependencies": {

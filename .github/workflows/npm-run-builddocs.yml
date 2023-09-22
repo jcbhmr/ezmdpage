@@ -1,35 +1,40 @@
-name: Deploy tests
+name: npm run build:docs
 on:
-  release:
-    types: published
+  push:
+    branches: "main"
+    paths-ignore:
+      - .gitignore
+      - LICENSE
+      - README.md
+      - .github/**
+      - "!.github/workflows/npm-run-builddocs.yml"
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  deploy-tests:
-    permissions:
-      contents: read
-      id-token: write
-      pages: write
-      deployments: write
+  npm-run-builddocs:
     environment:
       name: github-pages
       url: ${{ steps.deploy-pages.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
+          node-version: "20"
           cache: npm
       - run: npm ci
       - id: configure-pages
         uses: actions/configure-pages@v3
-      - run: npm run build
+      - run: npm run build:docs
         env:
           BASE_URL: ${{ steps.configure-pages.outputs.base_url }}/
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v2
         with:
-          path: test
+          path: storybook-static
       - id: deploy-pages
         uses: actions/deploy-pages@v2
