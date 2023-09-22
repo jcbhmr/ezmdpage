@@ -8,9 +8,9 @@
 ![](https://github.com/togajam/ezmdpage/assets/61068799/6272eb94-1b39-4e5b-9bea-9257b2e2c4b9)
 
 <!-- prettier-ignore -->
-[Test page](https://togajam.github.io/ezmdpage/)
-| [ezmdpage & Alpine.js](https://togajam.github.io/ezmdpage/alpinejs.html)
-| [ezmdpage & Vue.js](https://togajam.github.io/ezmdpage/vuejs.html)
+[Test page](https://jcbhmr.me/ezmdpage/)
+| [ezmdpage & Alpine.js](https://jcbhmr.me/ezmdpage/alpinejs.html)
+| [ezmdpage & Vue.js](https://jcbhmr.me/ezmdpage/vuejs.html)
 
 </div>
 
